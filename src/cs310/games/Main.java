@@ -4,8 +4,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		UserInteraction play = new Play();
-		play.play();
-
+		Engine gameEngine = new GameEngine();
+		gameEngine.play();
 	}
 }
