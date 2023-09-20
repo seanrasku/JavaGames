@@ -13,10 +13,17 @@ public class RetrieveGameInput implements GameInputInterface {
         System.out.println("1: Nim\n2: Tic Tac Toe");
         System.out.print("Your Choice: ");
         int game = Integer.parseInt(scan.next());
+        while(game < 1 || game > 2) {
+            System.out.println("Invalid choice, choose 1 or 2");
+            game = Integer.parseInt(scan.next());
+        }
+
+
         System.out.println("Who goes first? \n0: You\n 1: Computer\n--> ");
         int first = Integer.parseInt(scan.next());
-        if(game < 1 || game > 2 || first < 0 || first > 1) {
-            throw new IllegalArgumentException("Invalid Input, try again");
+        while(first < 0 || first > 1) {
+            System.out.println("Invalid choice, choose 0 or 1");
+            first = Integer.parseInt(scan.next());
         }
         this.game = game;
         this.first = first;
